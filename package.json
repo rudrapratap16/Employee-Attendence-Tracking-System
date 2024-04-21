@@ -1,0 +1,24 @@
+{
+  "name": "employee-attendence-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.3.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.3",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.9.13",
+    "path": "^0.12.7"
+  }
+}
