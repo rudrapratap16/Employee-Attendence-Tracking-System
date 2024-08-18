@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team 1000101</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpg" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+    </style>
+    <link rel="stylesheet" href="/css/hr-form-style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <img
+          src="/photos/logo.jpg"
+          style="width: 50px; height: 50px; margin-left: 0.2rem"
+          alt="logo"
+        />
+      </div>
+    </nav>
+
+    <div class="card-layout">
+      <h1 class="fw-bold mb-4 fs-2">Add Human Resources</h1>
+      <hr class="my-4" />
+      <div class="form-main">
+        <img src="/photos/Profile.jpg" alt="Avatar" class="avatar" />
+        <div class="modal-body p-5 pt-0">
+          <div class="">
+            <div class="row g-3">
+              <div class="col form-floating mb-3">
+                <form method="post" action="/attendence/admin/hr">
+                    <label for="floatingInput">Enter your name</label>
+                <input
+                name="name"
+                  type="text"
+                  class="form-control"
+                  placeholder="First name"
+                  aria-label="First name"
+                  required
+                />
+              </div>
+              <div class="col form-floating mb-3">
+                <input
+                name="hrid"
+                  type="text"
+                  class="form-control"
+                  placeholder="Last name"
+                  aria-label="Last name"
+                  required
+                />
+                <label for="floatingInput">Human Resource ID</label>
+              </div>
+            </div>
+            <div class="col form-floating mb-3">
+              <input
+              name="empids"
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                aria-label="Last name"
+                required
+              />
+              <label for="floatingInput">Employees Under Hr</label>
+            </div>
+            <hr class="my-4" />
+            <div class="flex-button">
+              <button
+                class="report-button btn table-button btn-outline-primary"
+              >
+                Register
+              </button>
+            </form>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome <%=hr.name%></h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Tasks being done</th>
+            <th scope="col"><button>Manage tasks</button></th>
+            <th scope="col">Requests</th>
+            <th scope="col">attendence</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <%for(emp of employees){%>
+                <tr>
+                    <th scope="row"><%=i%></th>
+                    <%i = i + 1 %>
+                    <td><%=emp.name%></td>
+                    <%for(task of tasks){%>
+                      <%if(task.madeBy == emp.id){%>
+                        <td><%=task.tasks.length%></td>
+                        <%for(taskNow of task.tasks){%>
+                          <form method="post" action="/attendence/hr/<%=hr.id%>/<%=emp.id%>/task/<%=taskNow._id%>?_method=DELETE">
+                            
+                          <td><%=taskNow.task%></td>
+                          <td><button>Delete</button></td>
+                        
+                          </form>
+                        <%}%>
+                        <%for(tasking of task.tasks){%>
+                          <%if(tasking.status == "Pending"){%>
+                            
+                            <td><%=tasking.task%></td>
+                            <form method="get" action="/attendence/hr/<%=hr.id%>/<%=emp.id%>/task/<%=tasking.id%>/download"><td><button>Download</button></td></form>
+                            <form method="get" action="/attendence/hr/<%=hr.id%>/<%=emp.id%>/task/<%=tasking.id%>/approve"><td><button>Approve</button></td></form>
+                            <form method="get" action="/attendence/hr/<%=hr.id%>/<%=emp.id%>/task/<%=tasking.id%>/reject"><td><button>Reject</button></td></form>
+                          <%}%>
+                        <%}%>
+                      <%}%>
+                     <%}%>
+                     <td>
+                      <%let month = new Date()%>
+                      <%month = month.getMonth() + 1%>
+                          <%currMonth = []%>
+                          <%for(date of emp.intime){%>
+                              <%let [oneDate, oneMonth, oneYear] = date.split('/')%>
+                              <%if(oneMonth == month && !currMonth.includes(oneDate)){%>
+                                  <%currMonth.push(oneDate)%>
+                              <%}%>
+                          <%}%>
+                          <%=currMonth.length%>
+                    </td>
+                    <form method="get" action="/attendence/hr/<%=hr.id%>/<%=emp.id%>/task/new">
+                      <td><button>Add New Task</button></td>
+                    </form>
+                  </tr>
+            <%}%>
+            <td>
+            <form method="get" action="/attendence/hr/<%=hr.id%>/task/new">
+              <button>Add Task To All Employees</button>
+            </form>
+          </td>
+        </tbody>
+      </table>
+</body>
+</html>
+

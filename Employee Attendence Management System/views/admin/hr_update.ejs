@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%for(empid of hr.employeeID){%>
+        <form method="post" action="/attendence/admin/hr/form/<%=hr.id%>/<%=empid%>?_method=DELETE">
+            <%=empid%>
+            <button>Delete Id</button>
+        </form>
+        <%}%>
+
+    <!-- <%for(user of users){%>
+        <form method="post" action="/attendence/admin/hr/form/<%=hr.id%>/<%=user.id%>?_method=PUT">
+            <%=user.name%>
+            <%=user.employeeID%>
+            <button>Add</button>
+        </form>
+    <%}%> -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Employee ID</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <%for(user of users){%>
+                <form method="post" action="/attendence/admin/hr/form/<%=hr.id%>/<%=user.id%>?_method=PUT">
+          <tr>
+            <td><%=user.name%></td>
+            <td><%=user.employeeID%></td>
+            <td><button>Add</button></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+</body>
+</html>
